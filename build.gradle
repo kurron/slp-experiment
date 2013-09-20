@@ -22,6 +22,10 @@ group = 'org.kurron.slp'
         exclude module: 'hamcrest-core'
     }
 
+repositories {
+    mavenCentral()
+}
+
     dependencies {
         compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
         compile "org.slf4j:slf4j-api:${slf4jVersion}"
