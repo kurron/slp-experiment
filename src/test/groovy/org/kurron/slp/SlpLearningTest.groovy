@@ -32,7 +32,7 @@ class SlpLearningTest extends Specification {
         UserAgentClient sut = SLP.newUserAgentClient( null )
 
         when: 'find is called'
-        ServiceType serviceType = new ServiceType('service:amqpbroker')
+        ServiceType serviceType = new ServiceType('service:amqpbroker:amqp')
         String language = null // Any language
         Scopes scopes = Scopes.DEFAULT
         String filter = null
@@ -41,6 +41,7 @@ class SlpLearningTest extends Specification {
         then: 'a service is found'
         assertThat( services, is( notNullValue() ) )
         assertThat( services.size(), is( equalTo( 1 ) ) )
+        assertThat( services.first().key.serviceURL.host, is( equalTo( '192.168.254.28' ) ) )
         log.debug( 'Hi' )
     }
 }
