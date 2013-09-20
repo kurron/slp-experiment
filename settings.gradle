@@ -1,0 +1,2 @@
+// this is the only place that the project name is mutable
+rootProject.name = 'slp-experiment'

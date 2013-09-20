@@ -1,0 +1,42 @@
+description = 'SLP Experiment'
+group = 'org.kurron.slp'
+
+    logger.quiet 'Building SLP'
+    apply plugin: 'groovy'
+    apply plugin: 'project-report'
+
+    ext {
+        groovyVersion = '2.1.7'
+        hamcrestVersion = '1.3'
+        junitVersion = '4.11'
+        logbackVersion = '1.0.12'
+        slf4jVersion = '1.7.5'
+        spockVersion = '0.7-groovy-2.0'
+        slpVersion = '2.2.1'
+    }
+
+    configurations.all {
+        exclude group: 'commons-logging'
+        exclude group: 'org.mockito'
+        exclude module: 'junit-dep'
+        exclude module: 'hamcrest-core'
+    }
+
+    dependencies {
+        compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+        compile "org.slf4j:slf4j-api:${slf4jVersion}"
+        compile "org.slf4j:slf4j-ext:${slf4jVersion}"
+        compile "org.slf4j:jul-to-slf4j:${slf4jVersion}"
+        compile "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
+        compile "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+        compile "org.livetribe.slp:livetribe-slp:${slpVersion}"
+
+        runtime "ch.qos.logback:logback-core:${logbackVersion}"
+        runtime "ch.qos.logback:logback-classic:${logbackVersion}"
+
+        testCompile "junit:junit:${junitVersion}"
+        testCompile "org.hamcrest:hamcrest-all:${hamcrestVersion}"
+        testCompile "org.spockframework:spock-core:${spockVersion}"
+    }
+
+defaultTasks 'clean', 'projectReport', 'build'
