@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="livetribe-slp-2.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.livetribe.slp/livetribe-slp/2.2.1/jar/52c8eb3552e0ee8e96ddeac1c9540071b95ceed2/livetribe-slp-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.livetribe.slp/livetribe-slp/2.2.1/source/d9d03a38239844e8a24cc1496d979087a4d797e2/livetribe-slp-2.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
